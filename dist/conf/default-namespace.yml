@@ -1,0 +1,13 @@
+name: "default"
+
+config:
+  - spark.sql.warehouse.dir=/opt/sxp/flowman/hive/warehouse
+  - hive.metastore.uris=
+  - javax.jdo.option.ConnectionURL=jdbc:derby:;databaseName=/opt/sxp/flowman/hive/db;create=true
+  - datanucleus.rdbms.datastoreAdapterClassName=org.datanucleus.store.rdbms.adapter.DerbyAdapter
+
+  - spark.executor.cores=$System.getenv('SPARK_EXECUTOR_CORES', '8')
+  - spark.executor.memory=$System.getenv('SPARK_EXECUTOR_MEMORY', '54g')
+
+plugins:
+  - flowman-example

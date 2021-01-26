@@ -1,0 +1,16 @@
+relations:
+  measurements-raw:
+    kind: file
+    format: text
+    location: "s3a://dimajix-training/data/weather/"
+    pattern: "${year}"
+    partitions:
+      - name: year
+        type: integer
+        granularity: 1
+    schema:
+      kind: embedded
+      fields:
+        - name: raw_data
+          type: string
+          description: "Raw measurement data"

@@ -1,0 +1,9 @@
+name: "weather"
+version: "@project.version@"
+
+modules:
+ - model
+ - mapping
+ - target
+ - job
+ - config

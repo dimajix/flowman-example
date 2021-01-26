@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>flowman-example-dist</artifactId>
+    <name>Flowman Example Dist</name>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>com.dimajix.flowman</groupId>
+        <artifactId>flowman-example-root</artifactId>
+        <version>0.14.3-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.dimajix.flowman</groupId>
+                                    <artifactId>flowman-dist</artifactId>
+                                    <version>${flowman.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>bin</classifier>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.dimajix.flowman</groupId>
+                                    <artifactId>flowman-example-plugin</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>bin</classifier>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.dimajix.flowman</groupId>
+                                    <artifactId>flowman-example-spec</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>tar.gz</type>
+                                    <classifier>spec</classifier>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
