@@ -16,11 +16,11 @@
 
 package com.dimajix.flowman.example.plugin
 
-import com.dimajix.flowman.annotation.TargetType
 import com.dimajix.flowman.execution.Context
 import com.dimajix.flowman.execution.Executor
 import com.dimajix.flowman.model.BaseTarget
 import com.dimajix.flowman.model.Target
+import com.dimajix.flowman.spec.annotation.TargetType
 import com.dimajix.flowman.spec.target.TargetSpec
 
 
