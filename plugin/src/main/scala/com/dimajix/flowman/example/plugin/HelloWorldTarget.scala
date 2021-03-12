@@ -17,7 +17,7 @@
 package com.dimajix.flowman.example.plugin
 
 import com.dimajix.flowman.execution.Context
-import com.dimajix.flowman.execution.Executor
+import com.dimajix.flowman.execution.Execution
 import com.dimajix.flowman.model.BaseTarget
 import com.dimajix.flowman.model.Target
 import com.dimajix.flowman.spec.annotation.TargetType
@@ -30,9 +30,9 @@ case class HelloWorldTarget(
     /**
       * Abstract method which will perform the given task.
       *
-      * @param executor
+      * @param execution
       */
-    override def build(executor: Executor): Unit = {
+    override def build(execution: Execution): Unit = {
         println("Hello world!")
     }
 }
