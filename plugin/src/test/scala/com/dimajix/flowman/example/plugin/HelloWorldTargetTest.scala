@@ -16,15 +16,15 @@
 
 package com.dimajix.flowman.example.plugin
 
-import org.scalatest.FlatSpec
-import org.scalatest.Matchers
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 import com.dimajix.flowman.execution.Session
 import com.dimajix.flowman.model.Module
 
 
-class HelloWorldTargetTest extends FlatSpec with Matchers {
-    "A HelloWorldTask" should "be deserializable" in {
+class HelloWorldTargetTest extends AnyFlatSpec with Matchers {
+    "A HelloWorldTarget" should "be deserializable" in {
         val session = Session.builder().build()
         val spec =
             """

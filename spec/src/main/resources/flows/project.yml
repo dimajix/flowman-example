@@ -2,8 +2,9 @@ name: "weather"
 version: "@project.version@"
 
 modules:
+ - config
  - model
  - mapping
  - target
  - job
- - config
+ - test
