@@ -25,7 +25,9 @@ import com.dimajix.flowman.model.Module
 
 class HelloWorldTargetTest extends AnyFlatSpec with Matchers {
     "A HelloWorldTarget" should "be deserializable" in {
-        val session = Session.builder().build()
+        val session = Session.builder()
+            .disableSpark()
+            .build()
         val spec =
             """
               |targets:

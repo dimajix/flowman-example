@@ -24,3 +24,25 @@ Once you have Flowman artifacts in your `.m2` directory, You can simply build th
 
 Note that some unittests will read data from AWS S3, which in turn requires some valid AWS credentials in the
 environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+
+
+## Installing
+
+Once you have built the example, you will find a file `flowman-example-dist-x.y.z-bin.tar.gz` in the `dist/target` 
+directory. That file contains the whole application including both Flowman and the example. In order to install
+the application, you simply need to unpack it at a location of your choice.
+
+You also have to download and install [Apache Spark](https://spark.apache.org) with the same version as your
+Flowman build (which would be 3.1.2 as of this writing).
+
+
+## Running
+
+When you finally want to run the application, you need to navigate to the directory where you unpacked the dist
+archive. Then run
+
+```shell
+export SPARK_HOME=/your/spark/directory
+
+bin/flowshell -f flows/weather 
+```

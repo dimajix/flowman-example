@@ -1,5 +1,8 @@
 name: "default"
 
+metrics:
+  - kind: console
+
 config:
   - spark.sql.warehouse.dir=/opt/sxp/flowman/hive/warehouse
   - hive.metastore.uris=
@@ -11,3 +14,4 @@ config:
 
 plugins:
   - flowman-example
+  - flowman-aws

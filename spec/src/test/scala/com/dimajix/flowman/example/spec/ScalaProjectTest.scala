@@ -13,7 +13,7 @@ import com.dimajix.flowman.testing.Runner
 import com.dimajix.spark.testing.LocalTempDir
 
 
-class TestExampleSpec extends AnyFlatSpec with Matchers with LocalTempDir {
+class ScalaProjectTest extends AnyFlatSpec with Matchers with LocalTempDir {
     "The example flow spec" should "be executable" in {
 
         val proxyPattern = "([^:]+:\\/\\/)?([^:]*)(:(.*))?".r
@@ -24,7 +24,7 @@ class TestExampleSpec extends AnyFlatSpec with Matchers with LocalTempDir {
 
         val runner = Runner.builder()
             .withProfile("test")
-            .withProject(Resources.getResource("flows"))
+            .withProject(Resources.getResource("flows/weather"))
             .withEnvironment("basedir", new File(tempDir, "weather").toString)
             .withConfig("spark.hadoop.fs.s3a.proxy.host",proxyHost)
             .withConfig("spark.hadoop.fs.s3a.proxy.port",proxyPort)
@@ -38,7 +38,7 @@ class TestExampleSpec extends AnyFlatSpec with Matchers with LocalTempDir {
 
     it should "provide test cases" in {
         val runner = Runner.builder()
-            .withProject(Resources.getResource("flows"))
+            .withProject(Resources.getResource("flows/weather"))
             .build()
 
         runner.runTests()

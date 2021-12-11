@@ -44,3 +44,6 @@ if [[ $SPARK_DRIVER_PORT != "" ]]; then
         --conf spark.sql.broadcastTimeout=${SPARK_BROADCAST_TIMEOUT:=900s}
         $SPARK_OPTS"
 fi
+
+# Allocate somewhat more memory for driver
+SPARK_DRIVER_MEMORY="4G"
