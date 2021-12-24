@@ -5,3 +5,17 @@ targets:
     relation: measurements
     partition:
       year: $year
+
+  measurements_jdbc_merge:
+    kind: merge
+    mapping: measurements_deduplicated
+    relation: measurements_jdbc
+    clauses:
+      - action: insert
+      - action: update
+
+  measurements_jdbc_append:
+    kind: relation
+    mapping: measurements_deduplicated
+    relation: measurements_jdbc
+    mode: append

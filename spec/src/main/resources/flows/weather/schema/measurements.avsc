@@ -1,7 +1,7 @@
 {
   "type": "record",
   "namespace": "",
-  "name": "stations",
+  "name": "measurements",
   "fields": [
     {
       "name": "usaf",

@@ -11,3 +11,19 @@ relations:
     schema:
       kind: avro
       file: "${project.basedir}/schema/measurements.avsc"
+
+  measurements_jdbc:
+    kind: jdbc
+    connection: sql_server
+    database: dbo
+    table: measurement
+    properties:
+      numPartitions: 1
+    schema:
+      kind: spark
+      file: "${project.basedir}/schema/measurements.json"
+    primaryKey:
+      - usaf
+      - wban
+      - date
+      - time
