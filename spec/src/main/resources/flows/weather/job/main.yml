@@ -12,3 +12,17 @@ jobs:
       - measurements
       - stations
       - aggregates
+      # Generate documentation
+      - documentation
+
+    # Define metrics to be published while running this job
+    metrics:
+      labels:
+        project: "${project.name}"
+      metrics:
+        - selector:
+            name: ".*"
+          labels:
+            category: "$category"
+            kind: "$kind"
+            name: "$name"

@@ -27,7 +27,7 @@
         },
         {
             "name": "wind_direction",
-            "type": "char(3)",
+            "type": "integer",
             "nullable": true,
             "metadata": {}
         },

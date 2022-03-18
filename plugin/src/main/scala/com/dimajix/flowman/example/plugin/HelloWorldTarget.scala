@@ -41,9 +41,9 @@ case class HelloWorldTarget(
 
 @TargetType(kind="hello-world")
 class HelloWorldTargetSpec extends TargetSpec {
-    override def instantiate(context: Context): Target = {
+    override def instantiate(context: Context, properties:Option[Target.Properties]): Target = {
         HelloWorldTarget(
-            instanceProperties(context)
+            instanceProperties(context, properties)
         )
     }
 }

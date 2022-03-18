@@ -1,4 +1,4 @@
-FROM dimajix/flowman:${flowman.version}${flowman.dist.suffix}
+FROM dimajix/flowman:${flowman.version}
 MAINTAINER k.kupferschmidt@dimajix.de
 
 # Copy unpacked and filtered artifacts

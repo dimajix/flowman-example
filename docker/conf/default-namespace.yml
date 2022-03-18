@@ -15,4 +15,3 @@ config:
 plugins:
   - flowman-example
   - flowman-aws
-  - flowman-mssqlserver
