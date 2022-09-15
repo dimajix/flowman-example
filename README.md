@@ -48,7 +48,21 @@ export SPARK_HOME=/your/spark/directory
 bin/flowshell -f flows/weather 
 ```
 
-## Using different Spark/Hadoop version
+## Using Docker
+
+The repository will also build a Docker image as an alternative to the `tar.gz` dist file. You can start the Docker
+image via
+
+```shell
+docker run --rm -ti dimajix/flowman-example:0.20.0
+
+flowshell -f /opt/flowman/flows/weather
+```
+
+
+## Misc
+
+### Using different Spark/Hadoop version
 
 The example will use the Flowman default Hadoop/Spark version. Since version 0.19.0, Flowman provides several 
 prebuilt versions for different Hadoop/Spark environments, which are available as different version numbers. You

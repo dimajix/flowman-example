@@ -10,7 +10,7 @@
     <parent>
         <groupId>com.dimajix.flowman</groupId>
         <artifactId>flowman-example-root</artifactId>
-        <version>0.19.0</version>
+        <version>0.27.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -63,22 +63,18 @@
             <groupId>com.dimajix.flowman</groupId>
             <artifactId>flowman-spec</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.dimajix.flowman</groupId>
             <artifactId>flowman-spark-testing</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.dimajix.flowman</groupId>
             <artifactId>flowman-testing</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.dimajix.flowman</groupId>
             <artifactId>flowman-plugin-aws</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.dimajix.flowman</groupId>
             <artifactId>flowman-example-plugin</artifactId>
@@ -90,6 +86,16 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
@@ -98,7 +104,6 @@
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_${scala.api_version}</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
